@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by premkamon on 30/8/2559.
+ * Created by This PC on 8/31/2016.
  */
-public class  Menu2 extends Activity {
+public class Menu3 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu2);
+        setContentView(R.layout.activity_menu3);
     }
 }

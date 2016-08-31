@@ -23,5 +23,6 @@
         android:id="@+id/button7"
         android:layout_gravity="center_horizontal"
         android:textSize="16dp"
-        android:background="#e7dddd" />
+        android:background="#e7dddd"
+        android:layout_marginTop="30dp" />
 </LinearLayout>
