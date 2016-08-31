@@ -17,17 +17,38 @@ public class Menu1 extends Activity {
 
 
         Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener()
+        button.setOnClickListener(new View.OnClickListener() {
 
-        {
+
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(getApplicationContext(), Text.class);
                 startActivity(a);
             }
-        }
+        });
 
-        );
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(getApplicationContext(), Text1.class);
+                startActivity(a);
+            }
+        });
+
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(getApplicationContext(), Text2.class);
+                startActivity(a);
+            }
+        });
+    }
+
 
     }
-}

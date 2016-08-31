@@ -26,7 +26,7 @@ public class Select extends Activity {
          });
 
         Button b2 = (Button)findViewById(R.id.b2);
-        b1.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), Menu2.class);
@@ -35,7 +35,7 @@ public class Select extends Activity {
         });
 
         Button b3 = (Button)findViewById(R.id.b3);
-        b1.setOnClickListener(new View.OnClickListener() {
+        b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), Menu3.class);

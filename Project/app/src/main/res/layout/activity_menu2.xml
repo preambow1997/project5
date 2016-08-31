@@ -5,17 +5,19 @@
     android:background="#FFE4B5"
     android:weightSum="1">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ข่าวประชาสัมพ์ ฝ่ายวิชาการ"
-        android:id="@+id/textView6"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/abc_background_cache_hint_selector_material_dark"
+        android:text="ข่าวประชาสัมพันธ์ ฝ่ายวิชาการ"
         android:textSize="20dp"
-        android:layout_weight="0.00"
-        android:fontFamily="@string/abc_action_bar_home_description"/>
+        android:id="@+id/textView6"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="401dp"
@@ -25,8 +27,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="16dp"
         android:layout_weight="0.04"
-        android:background="#eae2e2"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="10dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -36,7 +37,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.04"
         android:textSize="16dp"
-        android:background="#cecbcb"
         android:layout_marginTop="15dp" />
 
     <Button
@@ -48,6 +48,5 @@
         android:layout_gravity="center_horizontal"
         android:textSize="16dp"
         android:layout_weight="0.04"
-        android:background="#e8dede"
         android:layout_marginTop="15dp" />
 </LinearLayout>

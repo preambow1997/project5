@@ -20,7 +20,9 @@
         <activity android:name=".Menu2"></activity>
         <activity android:name=".Menu3"></activity>
         <activity android:name=".Text"></activity>
-        
+        <activity android:name=".Text1"></activity>
+        <activity android:name=".Text2"></activity>
+
     </application>
 
 </manifest>

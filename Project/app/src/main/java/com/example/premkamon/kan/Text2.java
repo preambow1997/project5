@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by This PC on 8/31/2016.
+ * Created by premkamon on 31/8/2559.
  */
-public class Text extends Activity {
+public class Text2  extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text);
+        setContentView(R.layout.activity_text2);
     }
 }
-

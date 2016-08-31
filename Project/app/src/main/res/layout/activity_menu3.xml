@@ -4,17 +4,21 @@
     android:layout_height="match_parent"
     android:background="#FFE4B5">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/head" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ข่าวประชาสัมพันธ์ ฝ่ายปกครอง"
+        android:text="@string/abcd"
         android:id="@+id/textView7"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/abc_background_cache_hint_selector_material_dark"
         android:textSize="20dp"
-        android:layout_weight="0.00"
-        android:fontFamily="@string/abc_action_bar_home_description"/>
+        android:fontFamily="@string/abc_action_bar_home_description"
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="match_parent"
@@ -23,6 +27,7 @@
         android:id="@+id/button7"
         android:layout_gravity="center_horizontal"
         android:textSize="16dp"
-        android:background="#e7dddd"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="10dp" />
+
+
 </LinearLayout>
