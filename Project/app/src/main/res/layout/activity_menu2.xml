@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE4B5"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ข่าวประชาสัมพ์ ฝ่ายวิชาการ"
+        android:id="@+id/textView6"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/abc_background_cache_hint_selector_material_dark"
+        android:textSize="20dp"
+        android:layout_weight="0.00"
+        android:fontFamily="@string/abc_action_bar_home_description"/>
+
+    <Button
+        android:layout_width="401dp"
+        android:layout_height="wrap_content"
+        android:text="ส่งนักศึกษาเข้าร่วมงาน SEA Makerthon ณ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา เชียงใหม่"
+        android:id="@+id/button4"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16dp"
+        android:layout_weight="0.04"
+        android:background="#eae2e2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ฝึกอบรมเชิงปฏิบัติการ &quot;การพัฒนาซอฟต์แวร์แบบคล่องตัว&quot; "
+        android:id="@+id/button5"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.04"
+        android:textSize="16dp"
+        android:background="#cecbcb" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="แนะแนวการศึกษาต่อแผนกเทคโนโลยีสารสนเทศ"
+        android:id="@+id/button6"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16dp"
+        android:layout_weight="0.04"
+        android:background="#e8dede" />
+</LinearLayout>

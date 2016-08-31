@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="#FFE4B5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ข่าวประชาสัมพันธ์ ฝ่ายกิจกรรม"
+        android:id="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/abc_background_cache_hint_selector_material_dark"
+        android:textSize="20dp"
+        android:layout_weight="0.02"
+        android:fontFamily="@string/abc_action_bar_home_description" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="กีฬาสี วิทยาลัยเทคนิคเชียงใหม่"
+        android:id="@+id/button"
+        android:layout_weight="0.03"
+        android:textSize="16dp"
+        android:background="@color/background_material_light" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="วันไหว้ครูประจำปีการศึกษา 2559"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"
+        android:background="#f5efef"
+        android:textSize="16dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ทำบุญแผนกเทคโนโลยีสารสนเทศ"
+        android:id="@+id/button3"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05"
+        android:background="#f3d4d4"
+        android:textSize="16dp" />
+
+</LinearLayout>
