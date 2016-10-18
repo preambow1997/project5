@@ -24,3 +24,14 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
 }
+
+apply plugin: 'android'
+
+android {
+
+}
+
+dependencies {
+
+    compile 'com.google.code.gson:gson:2.2.4'
+}

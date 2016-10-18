@@ -46,10 +46,8 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-<<<<<<< HEAD
                 android:layout_marginLeft="40dp"
                 android:ems="10"/>
-=======
                 android:layout_marginLeft="40dp"/>
 
 >>>>>>> f98412e0c87d5f305adafe9d270657b437d96b88
@@ -79,7 +77,6 @@
                 android:layout_toRightOf="@+id/textView3"
                 android:layout_toEndOf="@+id/textView3"
                 android:layout_marginBottom="102dp"
-<<<<<<< HEAD
                 android:ems="10"
                 android:inputType="textPassword"/>
 =======

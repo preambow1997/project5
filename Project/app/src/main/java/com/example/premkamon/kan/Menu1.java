@@ -1,92 +1,88 @@
 package com.example.premkamon.kan;
 
-
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
-/**
- * Created by premkamon on 25/8/2559.
- */
-public class Menu1 extends Activity {
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class Activity extends AppCompatActivity {
+
+    public static final String URL =
+            "http://blog.teamtreehouse.com/api/get_recent_summary/";
+
+    // สร้างตัวแปร 2 ตัวคือ ListView และ CustomAdapter
+    private ListView mListView;
+    private CustomAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu1);
+        setContentView(R.layout.activity_main);
 
-    private void refreshItemsFromTable(final int id) {
-        final AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        if (mClient == null) {
-            AlertDialog ad = adb.create();
-            ad.setMessage("Cannot connect to Windows Azure Mobile Service!");
-            ad.show();
-        } else {
+        mListView = (ListView) findViewById(R.id.listView);
 
-            mMyMember.where().field("id").eq(id).execute(new TableQueryCallback<MyMember>() {
-            public void onCompleted(List<MyMember> result, int count, Exception exception,
-                      ServiceFilterResponse response) {
-                if (exception == null) {
-                    066.
-                    if(result.size() > 0)
-                    {
-                        final EditText txtName = (EditText) findViewById(R.id.editText2);
-                        final EditText txtName1 = (EditText) findViewById(R.id.editText);
+        new SimpleTask().execute(URL);
+    }
 
-                        final Button subMitfrm = (Button) findViewById(R.id.btn);
+    private class SimpleTask extends AsyncTask<String, Void, String> {
 
-                        final TextView ShowMsg = (TextView) findViewById(R.id.textView);
-                        final TextView ShowMsg1 = (TextView) findViewById(R.id.textView3);
-                    }
-
-            } else {
-                    AlertDialog ad = adb.create();
-                    ad.setMessage("Error : " + exception.getCause().getMessage());
-                    ad.show();
-                }
+        @Override
+        protected void onPreExecute() {
+            // Create Show ProgressBar
         }
-    };
 
+        protected String doInBackground(String... urls) {
+            String result = "";
+            try {
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+                HttpGet httpGet = new HttpGet(urls[0]);
+                HttpClient client = new DefaultHttpClient();
 
+                HttpResponse response = client.execute(httpGet);
 
-            @Override
-            public void onClick(View view) {
-                Intent a = new Intent(getApplicationContext(), Text.class);
-                startActivity(a);
+                int statusCode = response.getStatusLine().getStatusCode();
+
+                if (statusCode == 200) {
+                    InputStream inputStream = response.getEntity().getContent();
+                    BufferedReader reader = new BufferedReader
+                            (new InputStreamReader(inputStream));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        result += line;
+                    }
+                }
+
+            } catch (ClientProtocolException e) {
+
+            } catch (IOException e) {
+
             }
-        });
+            return result;
+        }
 
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View view) {
-                Intent a = new Intent(getApplicationContext(), Text1.class);
-                startActivity(a);
-            }
-        });
-
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View view) {
-                Intent a = new Intent(getApplicationContext(), Text2.class);
-                startActivity(a);
-            }
-        });
+        protected void onPostExecute(String jsonString) {
+            // Dismiss ProgressBar
+            showData(jsonString);
+        }
     }
 
+    private void showData(String jsonString) {
+        Gson gson = new Gson();
+        Blog blog = gson.fromJson(jsonString, Blog.class);
+        List<Post> posts = blog.getPosts();
 
+        mAdapter = new CustomAdapter(this, posts);
+        mListView.setAdapter(mAdapter);
     }
+}
